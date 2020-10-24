@@ -1,0 +1,4 @@
+include *.md
+include LICENSE.txt
+include setup.cfg
+include *ex?.txt

@@ -1,0 +1,13 @@
+============================= test session starts =============================
+platform win32 -- Python 3.9.0, pytest-6.1.1, py-1.9.0, pluggy-0.13.1 -- c:\users\nolt2\appdata\local\programs\python\python39\rot13\scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\nolt2\PycharmProjects\ROT13
+collecting ... collected 5 items
+
+pytests_ex.py::test1 PASSED                                              [ 20%]
+pytests_ex.py::test2 PASSED                                              [ 40%]
+pytests_ex.py::test3 PASSED                                              [ 60%]
+pytests_ex.py::test4 PASSED                                              [ 80%]
+pytests_ex.py::test5 PASSED                                              [100%]
+
+============================== 5 passed in 0.03s ==============================

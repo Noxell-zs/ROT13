@@ -1,0 +1,5 @@
+/.idea/*
+/rotate.egg-info/*
+**/__pycache__/*
+**/pytest.cache/*
+/build/*

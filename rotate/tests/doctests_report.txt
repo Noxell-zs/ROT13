@@ -1,0 +1,30 @@
+Trying:
+    reading.from_file(this_dir+r'\ex1.txt', this_dir+r'\save1.txt', ciphers.rot13)
+Expecting:
+    The file is saved
+ok
+Trying:
+    reading.from_file(this_dir+r'\ex2.txt', this_dir+r'\save2.txt', ciphers.caesar1)
+Expecting:
+    The file is saved
+ok
+Trying:
+    reading.from_file(this_dir+r'\ex3.txt', this_dir+r'\save3.txt')
+Expecting:
+    The file is saved
+ok
+Trying:
+    reading.from_string('reebe', alg=ciphers.rot13)
+Expecting:
+    'error'
+ok
+Trying:
+    ciphers.rot13('Q')
+Expecting:
+    'D'
+ok
+1 items passed all tests:
+   5 tests in __main__
+5 tests in 1 items.
+5 passed and 0 failed.
+Test passed.
