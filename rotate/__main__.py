@@ -41,11 +41,11 @@ def main():
         elif enter in ('f', 'file'):
             reading.from_file(input(msg_open + 'for reading: '),
                               input(msg_open + 'for saving: '),
-                              alg=ciphers.rot13)
+                              alg=ciphers.rot_13)
 
         elif enter in ('c', 'console'):
             print(reading.from_string(input('Enter the text: '),
-                                      alg=ciphers.rot13))
+                                      alg=ciphers.rot_13))
 
         else:
             print(f'A nonexistent command {enter} was entered')

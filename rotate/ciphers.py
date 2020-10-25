@@ -1,15 +1,15 @@
 """Realization of algorithms for char-by-char text encryption.
 
 Functions:
-    rot13(str) -> str
+    rot_13(str) -> str
         Character offset by 13 positions.
-    caesar1(str) -> str
+    caesar_1(str) -> str
         Character offset by 1 position.
 
 """
 
 
-def rot13(char_in: str) -> str:
+def rot_13(char_in: str) -> str:
     """Character offset by 13 positions.
 
     Parameters:
@@ -33,7 +33,7 @@ def rot13(char_in: str) -> str:
     return char_out
 
 
-def caesar1(char_in: str) -> str:
+def caesar_1(char_in: str) -> str:
     """Character offset by 1 position.
 
     Parameters:
