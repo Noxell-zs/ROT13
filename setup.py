@@ -34,7 +34,9 @@ setup(
 
     keywords='encryption, text',
 
+    install_requires=['pytest'],
     packages=find_packages(),
+    py_modules=["rotate.tests.rotate_test"],
 
     python_requires='>=3.8',
 

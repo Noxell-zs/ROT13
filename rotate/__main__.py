@@ -7,10 +7,34 @@ Saving text to a file.
 Algorithm description:
 https://ru.wikipedia.org/wiki/ROT13
 
--------
 
-    python -m rotate
+For doctest:
+
+>>> reading.from_string('Original text')
+'Original text'
+
+>>> reading.from_string('AbcdE', alg=ciphers.caesar_1)
+'BcdeF'
+
+>>> reading.from_string('reebe', alg=ciphers.rot_13)
+'error'
+
+>>> ciphers.rot_13('Q')
+'D'
+
+>>> ciphers.caesar_1('z')
+'a'
+
+
+Install the package:
     pip install -i https://test.pypi.org/simple/ rotate
+Run the main program:
+    python -m rotate
+Run tests using doctest:
+    python -m rotate --doctest [> rotate\\tests\\doctests_report.txt]
+Run tests using pytest:
+    python -m rotate --pytest [> rotate\\tests\\pytests_report.txt]
+
 
 :Authors:
     Замолоцкий Семен Андреевич, КИ20-17/1б
@@ -18,7 +42,29 @@ https://ru.wikipedia.org/wiki/ROT13
 """
 
 
+import argparse
+import os.path
 from rotate import reading, ciphers
+
+
+parser = argparse.ArgumentParser(description='Enter pytest or doctest mode')
+parser.add_argument('-p', '--pytest', required=False, action='store_const',
+                    const=True, help='Run tests using pytest')
+parser.add_argument('-d', '--doctest', required=False, action='store_const',
+                    const=True, help='Run tests using doctest')
+args = parser.parse_args()
+
+
+def cli():
+    """Realization of Command Line Interface."""
+    if args.doctest:
+        import doctest
+        doctest.testmod(verbose=True)
+
+    if args.pytest:
+        import pytest
+        this_dir = os.path.dirname(os.path.abspath(__file__))
+        pytest.main(args=['-v', this_dir])
 
 
 def info():
@@ -53,4 +99,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    if args.doctest or args.pytest:
+        cli()
+    else:
+        main()

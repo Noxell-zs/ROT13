@@ -3,10 +3,13 @@
 
 import sys
 import os
+
+
+this_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(this_dir))
+
+# Only in this order
 from rotate import reading, ciphers
-
-
-this_dir = os.path.dirname(os.path.abspath(__file__)) + r'\\Examples\\'
 
 
 def exam_1():
